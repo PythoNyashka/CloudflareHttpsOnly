@@ -20,7 +20,7 @@ After=syslog.target network.target mysql.service
 Type=simple
 User=root
 WorkingDirectory={path}
-ExecStart=python3.8 {path}/set.py
+ExecStart=/usr/bin/python3.8 {path}/set.py
 Restart=on-abort
 
 [Install]
