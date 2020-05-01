@@ -51,6 +51,7 @@ def main():
 	del_all_rules(443)
 	print('Setting rules ...')
 	set_rules(get_cf(), 443)
+	print('Done.')
 
 if __name__ == '__main__':
 	main()
