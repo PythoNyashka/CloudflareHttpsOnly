@@ -1,7 +1,7 @@
 # CloudflareHttpsOnly
 This repository will help you allow https only through Cloudflare on your Linux server.
 You must have the Uncomplicated FireWall activated before using it! For activate use `sudo ufw enable` and reboot system.
-1. Install `python3.8+`reboot
+1. Install `python3.8+`
 2. Install requirements:
 
 ```
