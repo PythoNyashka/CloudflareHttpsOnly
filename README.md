@@ -6,7 +6,6 @@ You must have the Uncomplicated FireWall activated before using it! For activate
 
 ```
 python3.8 -m pip install requests
-python3.8 -m pip install apscheduler
 ```
 3. Let's add our script to the crontab:
 * `nano /etc/crontab`

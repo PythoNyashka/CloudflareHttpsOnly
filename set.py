@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import subprocess
 import requests
-from apscheduler.schedulers.blocking import BlockingScheduler
 import datetime
 
 cmds = {
@@ -55,7 +54,3 @@ def main():
 
 if __name__ == '__main__':
 	main()
-
-	scheduler = BlockingScheduler()
-	scheduler.add_job(main, 'interval', hours=12)
-	scheduler.start()
