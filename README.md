@@ -8,7 +8,7 @@ You must have the Uncomplicated FireWall activated before using it! For activate
 python3.8 -m pip install requests
 ```
 3. Let's add our script to the crontab:
-* `nano /etc/crontab`
+* `crontab -e`
 * Insert the following code:
 `0 3 * * 1-7 /usr/bin/python3.8 {path}/set.py &> /dev/null`
 * Replace `{path}` with the absolute path to `set.py`
