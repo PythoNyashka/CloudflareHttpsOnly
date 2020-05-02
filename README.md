@@ -8,28 +8,12 @@ You must have the Uncomplicated FireWall activated before using it! For activate
 python3.8 -m pip install requests
 python3.8 -m pip install apscheduler
 ```
-3. Let's add our script to the startup:
-* `nano /etc/systemd/system/cloudflarehttpsonly.service`
+3. Let's add our script to the crontab:
+* `nano /etc/crontab`
 * Insert the following code:
-```
-[Unit]
-Description=socket_mailing socket daemon
-After=syslog.target network.target mysql.service
-
-[Service]
-Type=simple
-User=root
-WorkingDirectory={path}
-ExecStart=/usr/bin/python3.8 {path}/set.py
-Restart=on-abort
-
-[Install]
-WantedBy=multi-user.target
-```
+`0 3 * * 1-7 /usr/bin/python3.8 {path}/set.py &> /dev/null`
 * Replace `{path}` with the absolute path to `set.py`
 * Save, use ctrl+x
-* `systemctl enable cloudflarehttpsonly`
-* `systemctl start cloudflarehttpsonly`
 4. Done!
 
-Now every 12 hours the script will receive current IPv4 Cloudflare addresses and allow them to access HTTPS.
+Now at 03:00 on every day-of-week from Monday through Sunday the script will receive current IPv4 Cloudflare addresses and allow them to access HTTPS.
